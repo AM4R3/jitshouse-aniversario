@@ -56,19 +56,40 @@ filete, moldura e carimbo. Todos os textos aferidos ficaram entre 5.2:1 e 14.2:1
 Todas reais, baixadas da própria biblioteca de mídia do `jitshouse.com`.
 Nenhuma imagem de IA, nenhum banco de imagem.
 
-| Arquivo | O que é | Origem |
-|---|---|---|
-| `img/brasao.webp` | brasão Jitshouse Lifestyle | `Logo-jitshouse.png` |
-| `img/hero-casa.webp` | aérea da casa, piscina e mata | galeria 2026/08 |
-| `img/lugar-onda.webp` | surfista na onda da Praia do Rosa | galeria 2026/07 |
-| `img/rodrigo.webp` | retrato do Rodrigo (recorte circular) | `RODRIGO-KLIPPEL.jpg` |
-| `img/convidado-*.webp` | os 6 retratos dos convidados | recortados do card oficial |
-| `img/exp-*.webp` | deck, movimento, tatame, mesa, piscina, quarto, área comum | galerias 2026/07–08 |
-| `img/card-aniversario.webp` | o card oficial da imersão | `Aniversario-V5-Site.jpg` |
-| `img/og.jpg` | Open Graph 1200×630 | topo do card oficial |
+A biblioteca inteira do site (217 imagens, via `/wp-json/wp/v2/media`) foi baixada e
+revisada em contact sheet antes da escolha.
 
-Total: ~1 MB. Os retratos dos convidados vêm do card em 316 px — **pedir as fotos
-originais** para dobrar a nitidez em telas retina.
+| Arquivo | O que é | Onde aparece |
+|---|---|---|
+| `img/brasao.webp` | brasão Jitshouse Lifestyle | nav, hero, carimbo, CTA, rodapé |
+| `img/hero-rosa.webp` | **a enseada da Praia do Rosa vista do alto** | hero |
+| `img/openmat.webp` | **open mat cheio, sob a faixa da JitsHouse** | prato de "A experiência" |
+| `img/rodrigo-retrato.webp` | **retrato real do Rodrigo de quimono** | seção do anfitrião |
+| `img/lugar-onda.webp` | surfista na onda da Praia do Rosa | "O lugar", full-bleed |
+| `img/exp-grupo.webp` | a turma reunida na faixa da JitsHouse | galeria |
+| `img/exp-gelo.webp` | Rodrigo no banho de gelo | galeria |
+| `img/exp-movimento.webp` | prática de movimento no deck, luz de fim de tarde | galeria |
+| `img/exp-mesa.webp` | balcão de pedra do café da manhã | galeria |
+| `img/exp-piscina.webp` | piscina da casa entre a mata | galeria |
+| `img/exp-quarto.webp` | quarto com varanda para o verde | galeria |
+| `img/exp-casa.webp` | a casa do alto: piscina e deck | galeria |
+| `img/exp-porsol.webp` | pôr do sol sobre o mar | galeria |
+| `img/convidado-*.webp` | os 6 retratos dos convidados | seção dos convidados |
+| `img/og.jpg` | Open Graph 1200×630 | compartilhamento |
+
+Total: ~1,3 MB.
+
+**Sobre os retratos dos convidados:** são recortes circulares do card oficial, em 316 px.
+Existem fotos em alta de quatro deles na biblioteca do site — Carlos André, Matheus Viana,
+Pedro Wiggers e Julyano Machado — mas com fundos diferentes entre si (parede escura,
+arquibancada de competição). Trocar só quatro deixaria a grade de medalhões desigual, então
+mantive os seis iguais, do card. Se quiser as fotos em alta, é decisão de tratamento —
+aí vale trocar os seis e mudar o formato.
+
+**Fotos que ficaram de fora de propósito:** a biblioteca tem muita imagem de outras imersões
+(Caraíva, Ilhabela, Florianópolis, Costa Rica, Day Trainings) e de atletas que não estão
+neste evento. Nenhuma entrou. As fotos de praia e de casa aqui são da Praia do Rosa;
+as de tatame e de grupo não afirmam local nenhum.
 
 ---
 

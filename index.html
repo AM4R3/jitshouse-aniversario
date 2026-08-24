@@ -65,7 +65,7 @@
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="icon" href="img/brasao.webp" type="image/webp">
-<link rel="preload" as="image" href="img/hero-casa.webp" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-rosa.webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Oswald:wght@300;500&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
@@ -210,13 +210,21 @@ a{color:inherit}
 }
 .hero__foto{
   position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
-  opacity:.62; z-index:0;
+  object-position:center 42%; opacity:.7; z-index:0;
 }
-.hero::after{ /* véu */
+.hero::after{ /* véu — mobile: o texto ocupa quase toda a altura, então escurece parelho */
   content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
   background:
-    linear-gradient(180deg, rgba(1,16,15,.82) 0%, rgba(4,33,30,.44) 38%, rgba(1,16,15,.93) 100%),
-    radial-gradient(120% 85% at 15% 100%, rgba(1,16,15,.75), transparent 60%);
+    linear-gradient(180deg, rgba(1,16,15,.66) 0%, rgba(1,16,15,.60) 42%, rgba(1,16,15,.90) 100%),
+    radial-gradient(120% 55% at 8% 26%, rgba(1,16,15,.45), transparent 100%);
+}
+@media (min-width:900px){
+  /* desktop: o texto é ancorado embaixo — deixa a enseada respirar em cima */
+  .hero::after{
+    background:
+      linear-gradient(180deg, rgba(1,16,15,.30) 0%, rgba(1,16,15,.26) 28%, rgba(1,16,15,.80) 64%, rgba(1,16,15,.96) 100%),
+      radial-gradient(95% 65% at 12% 92%, rgba(1,16,15,.72), transparent 62%);
+  }
 }
 .hero .wrap{position:relative; z-index:2; width:100%}
 .hero__grid{display:grid; gap:clamp(2rem,5vw,3.5rem); align-items:end}
@@ -224,6 +232,8 @@ a{color:inherit}
 
 .selo{width:clamp(64px,9vw,92px); height:auto; margin-bottom:1.5rem}
 .hero__eyebrow{color:var(--ouro); margin-bottom:clamp(1rem,2.5vw,1.6rem)}
+/* sombra suave só no hero: o texto vive sobre foto, não sobre cor chapada */
+.hero h1,.hero__eyebrow,.hero__tag,.hero__sub,.ficha{text-shadow:0 2px 22px rgba(1,16,15,.6)}
 .hero h1{font-size:var(--fs-hero)}
 .hero h1 .l1{display:block; color:var(--papel); letter-spacing:.02em}
 .hero h1 .l2{display:block; color:var(--ouro-quente); letter-spacing:-.005em}
@@ -305,6 +315,18 @@ blockquote::after{content:"\201D"; color:var(--ouro-quente)}
 .dias .w{display:block; font-family:Oswald,sans-serif; font-weight:300; text-transform:uppercase;
   letter-spacing:.2em; font-size:.6rem; color:var(--mute-esc); margin-top:.5rem}
 
+/* prato editorial: a foto larga que abre a seção */
+.prato{margin:0 0 clamp(2.5rem,6vw,4rem)}
+.prato img{
+  width:100%; height:clamp(220px,42vw,460px); object-fit:cover;
+  object-position:center 55%; border:1px solid var(--ouro); padding:6px;
+}
+.prato figcaption{
+  margin-top:.7rem; font-family:Oswald,sans-serif; font-weight:300;
+  text-transform:uppercase; letter-spacing:.16em; font-size:var(--fs-micro);
+  color:var(--mute-esc);
+}
+
 .itin{list-style:none; margin:0; padding:0; max-width:56rem}
 .itin li{
   display:grid; grid-template-columns:auto 1fr; gap:clamp(1rem,3vw,2rem);
@@ -348,7 +370,10 @@ blockquote::after{content:"\201D"; color:var(--ouro-quente)}
 /* ── 07 · ANFITRIÃO ──────────────────────────────────────────────── */
 .anfitriao__grid{display:grid; gap:clamp(2rem,5vw,4rem); align-items:center}
 @media (min-width:860px){ .anfitriao__grid{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)} }
-.anfitriao__retrato{width:min(100%,340px); margin-inline:auto}
+.anfitriao__retrato{
+  width:100%; height:auto; aspect-ratio:10/9; object-fit:cover; object-position:62% center;
+  border:1px solid var(--ouro); padding:6px;
+}
 .anfitriao h2{color:var(--areia)}
 .anfitriao .creditos{
   margin-top:1.75rem; padding-top:1.25rem; border-top:1px solid rgba(197,177,120,.25);
@@ -362,9 +387,12 @@ blockquote::after{content:"\201D"; color:var(--ouro-quente)}
 /* ── 08 · O LUGAR ────────────────────────────────────────────────── */
 .lugar{position:relative}
 .lugar__foto{width:100%; height:clamp(300px,58vh,620px); object-fit:cover}
+/* a foto da onda é muito clara: véu de base + scrim do texto */
+.lugar::before{content:""; position:absolute; inset:0; background:rgba(1,16,15,.52); pointer-events:none}
 .lugar__texto{
-  position:absolute; inset:auto 0 0; padding-block:clamp(2rem,6vw,4rem);
-  background:linear-gradient(0deg, rgba(1,16,15,.94), rgba(1,16,15,.55) 60%, transparent);
+  position:absolute; inset:auto 0 0;
+  padding-block:clamp(4rem,11vw,7rem) clamp(2rem,6vw,4rem);
+  background:linear-gradient(0deg, rgba(1,16,15,.92) 0%, rgba(1,16,15,.70) 50%, rgba(1,16,15,.28) 85%, transparent 100%);
 }
 .lugar h2{color:var(--papel); max-width:20ch}
 .lugar p{color:var(--mute-esc); max-width:48ch; margin:1rem 0 0}
@@ -489,7 +517,7 @@ footer{border-top:1px solid rgba(197,177,120,.22); padding-block:clamp(2.5rem,6v
 
 <!-- ══ 02 · HERO ═════════════════════════════════════════════════ -->
 <section class="hero" id="topo">
-  <img class="hero__foto" src="img/hero-casa.webp" alt="Vista aérea da casa da Jitshouse na Praia do Rosa, com piscina, deck de madeira e mata ao redor" width="800" height="700" fetchpriority="high">
+  <img class="hero__foto" src="img/hero-rosa.webp" alt="A enseada da Praia do Rosa vista do alto: mar azul-turquesa, arrebentação e os morros verdes que fecham a baía" width="1500" height="1312" fetchpriority="high">
   <div class="wrap">
     <div class="hero__grid">
       <div>
@@ -576,6 +604,11 @@ footer{border-top:1px solid rgba(197,177,120,.22); padding-block:clamp(2.5rem,6v
       <div><span class="d">06</span><span class="w">Domingo</span></div>
     </div>
 
+    <figure class="prato an">
+      <img src="img/openmat.webp" alt="Open mat da Jitshouse: dezenas de praticantes de quimono treinando no tatame, sob a faixa da JitsHouse" width="1400" height="1225" loading="lazy" decoding="async">
+      <figcaption>Open mat na Jitshouse</figcaption>
+    </figure>
+
     <!--
       ══ TIMELINE · [SUBSTITUIR] ══════════════════════════════════
       Quando a grade real dos três dias chegar, apague a <ul class="itin">
@@ -648,7 +681,7 @@ footer{border-top:1px solid rgba(197,177,120,.22); padding-block:clamp(2.5rem,6v
 <section class="sec fundo anfitriao">
   <div class="wrap">
     <div class="anfitriao__grid">
-      <img class="anfitriao__retrato an" src="img/rodrigo.webp" alt="Retrato de Rodrigo Klippel de quimono com o logo da Jitshouse" width="376" height="376" loading="lazy" decoding="async">
+      <img class="anfitriao__retrato an" src="img/rodrigo-retrato.webp" alt="Rodrigo Klippel de quimono branco aberto, sorrindo, com a tatuagem no peito" width="1000" height="875" loading="lazy" decoding="async">
       <div>
         <p class="rotulo olho an" data-d="1"><span>04 — O anfitrião</span></p>
         <!-- [DADO: anfitrião] -->
@@ -668,7 +701,7 @@ footer{border-top:1px solid rgba(197,177,120,.22); padding-block:clamp(2.5rem,6v
 
 <!-- ══ 08 · O LUGAR ══════════════════════════════════════════════ -->
 <section class="lugar">
-  <img class="lugar__foto" src="img/lugar-onda.webp" alt="Surfista dropando uma onda na Praia do Rosa" width="800" height="700" loading="lazy" decoding="async">
+  <img class="lugar__foto" src="img/lugar-onda.webp" alt="Surfista dropando uma onda grande na Praia do Rosa" width="1300" height="1138" loading="lazy" decoding="async">
   <div class="lugar__texto">
     <div class="wrap">
       <h2 class="display an" style="font-size:var(--fs-h2)">A casa fica na Praia do Rosa</h2>
@@ -680,14 +713,14 @@ footer{border-top:1px solid rgba(197,177,120,.22); padding-block:clamp(2.5rem,6v
 <section class="sec" style="padding-top:clamp(2.5rem,6vw,4rem)">
   <div class="wrap">
     <div class="galeria">
-      <figure class="an"><img class="emoldurada" src="img/exp-deck.webp" alt="Piscina da casa vista do alto, cercada de mata atlântica" width="800" height="700" loading="lazy" decoding="async"><figcaption>A piscina e a mata</figcaption></figure>
-      <figure class="an" data-d="1"><img src="img/exp-movimento.webp" alt="Grupo em prática de movimento no deck de madeira da casa" width="800" height="700" loading="lazy" decoding="async"><figcaption>Movimento no deck</figcaption></figure>
-      <figure class="an" data-d="2"><img src="img/exp-tatame.webp" alt="Dupla treinando jiu-jitsu de quimono no tatame" width="800" height="700" loading="lazy" decoding="async"><figcaption>Tatame</figcaption></figure>
-      <figure class="an" data-d="3"><img class="emoldurada" src="img/exp-mesa.webp" alt="Mesa farta de café da manhã na casa da Jitshouse" width="800" height="700" loading="lazy" decoding="async"><figcaption>A mesa da casa</figcaption></figure>
-      <figure class="an"><img src="img/exp-piscina.webp" alt="Piscina da casa com o deck e a vegetação ao redor" width="800" height="700" loading="lazy" decoding="async"><figcaption>Descanso entre treinos</figcaption></figure>
-      <figure class="an" data-d="1"><img src="img/exp-quarto.webp" alt="Quarto da hospedagem com pé-direito alto e mezanino de madeira" width="800" height="700" loading="lazy" decoding="async"><figcaption>Onde você dorme</figcaption></figure>
-      <figure class="an" data-d="2"><img src="img/exp-casa.webp" alt="Área comum da casa com mesa de madeira e cozinha aberta" width="800" height="700" loading="lazy" decoding="async"><figcaption>Área comum</figcaption></figure>
-      <figure class="an" data-d="3"><img src="img/card-aniversario.webp" alt="Card oficial do Aniversário Jitshouse com os seis convidados confirmados" width="1080" height="1350" loading="lazy" decoding="async"><figcaption>O card oficial</figcaption></figure>
+      <figure class="an"><img class="emoldurada" src="img/exp-grupo.webp" alt="A turma de uma imersão reunida em frente à faixa da JitsHouse, todos de rash guard" width="760" height="665" loading="lazy" decoding="async"><figcaption>Irmãos de tatame</figcaption></figure>
+      <figure class="an" data-d="1"><img src="img/exp-gelo.webp" alt="Rodrigo Klippel imerso no banho de gelo, de olhos fechados, cercado pela mata" width="760" height="665" loading="lazy" decoding="async"><figcaption>Banho de gelo</figcaption></figure>
+      <figure class="an" data-d="2"><img src="img/exp-movimento.webp" alt="Grupo em prática de movimento no deck de madeira, na luz do fim de tarde" width="760" height="665" loading="lazy" decoding="async"><figcaption>Movimento no deck</figcaption></figure>
+      <figure class="an" data-d="3"><img class="emoldurada" src="img/exp-mesa.webp" alt="Balcão de pedra com sucos, frutas e pães do café da manhã da casa" width="760" height="665" loading="lazy" decoding="async"><figcaption>A mesa da casa</figcaption></figure>
+      <figure class="an"><img src="img/exp-piscina.webp" alt="Piscina da casa entre a mata, com pessoas na borda" width="760" height="665" loading="lazy" decoding="async"><figcaption>Descanso entre treinos</figcaption></figure>
+      <figure class="an" data-d="1"><img src="img/exp-quarto.webp" alt="Quarto da hospedagem com cama de casal, teto de madeira e varanda para o verde" width="760" height="665" loading="lazy" decoding="async"><figcaption>Onde você dorme</figcaption></figure>
+      <figure class="an" data-d="2"><img src="img/exp-casa.webp" alt="A casa vista do alto: piscina comprida, deck de madeira e palmeiras" width="760" height="665" loading="lazy" decoding="async"><figcaption>A casa do alto</figcaption></figure>
+      <figure class="an" data-d="3"><img src="img/exp-porsol.webp" alt="Pôr do sol sobre o mar, visto da vegetação de restinga" width="760" height="665" loading="lazy" decoding="async"><figcaption>O fim de tarde</figcaption></figure>
     </div>
     <p class="divisor" style="margin-top:clamp(2.5rem,6vw,4rem)"><i></i></p>
   </div>
