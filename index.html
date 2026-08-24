@@ -959,10 +959,9 @@ footer{border-top:1px solid rgba(197,177,120,.22); padding-block:clamp(2.5rem,6v
   ]
 }
 </script>
-<!-- [SUBSTITUIR] quando o preço existir, acrescentar ao JSON-LD acima:
-     "offers":{"@type":"Offer","price":"0000","priceCurrency":"BRL",
-     "availability":"https://schema.org/InStock",
-     "url":"<link do checkout>","validFrom":"2026-00-00"}              -->
+<!-- ATENÇÃO: o "price" do offers acima precisa mudar junto com o preço da
+     seção 09 e com o da loja. Se os três divergirem, o Google mostra um
+     valor e o cliente encontra outro no checkout — mata a confiança. -->
 
 <script>
 (function(){
