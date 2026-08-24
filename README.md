@@ -6,11 +6,20 @@ Praia do Rosa (Imbituba/SC), com Rodrigo Klippel e seis convidados confirmados.
 O site oficial ([jitshouse.com](https://jitshouse.com)) tem só uma home com carrossel —
 as páginas de cada imersão estão quebradas (404). Esta é a página de venda que falta.
 
-**Objetivo de conversão:** garantir a vaga pelo WhatsApp oficial
-(`wa.me/555199041589`, resolvido do `wa.link/62tfjd` publicado no site).
-Secundário: a loja oficial na InfinitePay.
+**Objetivo de conversão:** compra direta no checkout da InfinitePay.
+Todos os CTAs primários — nav, hero, seção de investimento, CTA final e barra
+sticky do mobile — apontam para o produto, **na mesma aba**:
 
-HTML único, sem framework, sem build. Só o Google Fonts é externo. 52 KB.
+    https://loja.infinitepay.io/jitshouse_lifestyle/yne5701-ticket-silver-aniversario-jitshouse
+
+**R$ 490,00** (de R$ 590,00, −17%), exibido na landing exatamente como no checkout.
+Vendedor que aparece no checkout: *Rodrigo de Mello Klippel*.
+
+O WhatsApp (`wa.me/555199041589`, resolvido do `wa.link/62tfjd`) virou canal
+**secundário de dúvidas**, em três pontos e em estilo de link, nunca de botão:
+seção de investimento, CTA final e rodapé.
+
+HTML único, sem framework, sem build. Só o Google Fonts é externo. 58 KB.
 
 ---
 
@@ -104,19 +113,49 @@ Vem dos materiais oficiais da marca:
 - "Criei a Jitshouse para provar que o jiu-jitsu vai além do tatame." — Rodrigo Klippel
 - Os seis convidados, com equipe/função, do card oficial
 
-**Programação e preço não foram inventados.** A seção de experiência mostra os eixos
-reais da imersão e diz que a grade completa vai por WhatsApp; a de investimento diz
-"vagas limitadas" e leva pro WhatsApp. Os blocos prontos pra receber os dados reais
-estão comentados no HTML.
+**A programação não foi inventada.** A seção de experiência mostra os eixos reais da
+imersão e diz que a grade completa vai por WhatsApp na confirmação; o bloco pronto pra
+receber a grade real está comentado no HTML. O preço, esse sim, é o real do checkout —
+ver a seção abaixo.
 
 ---
+
+## O que foi verificado na loja (24/08/2026)
+
+Puxei a loja e a página do produto e conferi antes de escrever o preço:
+
+- **Preço:** R$ 490,00, de R$ 590,00, badge −17%. Bate com a conta: 100/590 = 16,9%.
+- **Tier único:** a loja tem exatamente 4 produtos — um por imersão (Aniversário R$ 490,
+  Caraíva R$ 1.790, Preview Costa Rica R$ 2.190, Costa Rica R$ 8.990). Só existe **um**
+  produto do Aniversário e ele não tem seletor de variação, só de quantidade.
+  O "Ticket Silver" do slug não tem irmão Gold. ✔ checklist respondido
+- **Sem data de virada de lote:** a descrição do produto é só "Aniversario Jitshouse /
+  04,05 e 06 de setembro". Nada de prazo. Por isso a tag diz `-17% · preço atual`
+  em vez de inventar um "até DD/MM".
+- **Formas de pagamento:** a loja só revela na tela final do checkout. Não afirmo
+  bandeiras nem número de parcelas na landing — fica como pendência.
+- **Fluxo mobile:** landing → checkout testado a 390px. A página do produto abre,
+  mostra R$ 490,00 / R$ 590,00 e os botões "Comprar agora" e "Adicionar ao carrinho",
+  sem estouro horizontal. Não avancei para a tela de pagamento (exige dados reais).
+
+## Atenção: o que o ingresso inclui
+
+A versão anterior desta página dizia que o valor incluía "hospedagem, refeições e
+atividades". **Isso foi removido** — era suposição, e agora que a pessoa compra sem
+falar com ninguém, seria suposição cara.
+
+A loja não detalha o que está incluso, e R$ 490 por três dias fica muito abaixo das
+outras imersões da própria Jitshouse (Caraíva R$ 1.790), o que sugere que o ingresso
+cobre a participação, não a estadia. Enquanto o Rodrigo não confirmar, a página não
+afirma nada — e o link de dúvidas no WhatsApp fica logo abaixo do preço.
 
 ## Pendências
 
 - [ ] Grade real dos 3 dias → seção 05 (bloco `TIMELINE` comentado, é só descomentar)
-- [ ] Preço, lotes, formas de pagamento e o que está incluso → seção 09
-      (e acrescentar `offers` no JSON-LD)
-- [ ] Link direto do produto na loja InfinitePay (hoje aponta pra loja inteira)
+- [ ] **O que o ingresso de R$ 490 inclui** (hospedagem? refeições?) → seção 09
+- [ ] O desconto tem data de virada de lote? Se tiver, a tag vira "-17% · até DD/MM"
+- [ ] Parcelas e formas de pagamento ativas no checkout → linha de pagamento
+- [ ] A vaga confirma automático após o pagamento, ou o Rodrigo confirma na mão?
 - [ ] Bio real do Rodrigo: graduação, equipe, credenciais → seção 07
 - [ ] Links das landings das próximas imersões → seção 10
 - [ ] Fotos dos convidados em alta resolução
@@ -128,5 +167,6 @@ estão comentados no HTML.
 
 `title` e `description` em pt-BR, canonical, Open Graph + Twitter card com o card
 oficial, e Schema.org `Event` completo — datas ISO, `Place` com endereço,
-`organizer` e os sete `performer` (anfitrião + convidados). Sem `offers` enquanto
-não houver preço.
+`organizer` e os sete `performer` (anfitrião + convidados). O `offers` traz o preço
+real — R$ 490,00 BRL, `InStock`, apontando para o checkout — e precisa ser atualizado
+junto com a landing sempre que o valor mudar na loja.

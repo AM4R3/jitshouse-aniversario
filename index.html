@@ -30,7 +30,13 @@
                       (copy real do card de convidados)
   WHATSAPP .......... 55 51 99904-1589  (resolvido de wa.link/62tfjd,
                       o link oficial publicado em jitshouse.com)
-  LOJA .............. https://loja.infinitepay.io/jitshouse_lifestyle
+  CHECKOUT .......... https://loja.infinitepay.io/jitshouse_lifestyle/
+                      yne5701-ticket-silver-aniversario-jitshouse
+                      (destino de TODOS os CTAs primários, mesma aba)
+  PREÇO ............. R$ 490,00 · de R$ 590,00 · -17%
+                      Vendedor no checkout: RODRIGO DE MELLO KLIPPEL
+                      Ingresso único — a loja tem 4 produtos, um por
+                      imersão, e só um do Aniversário. Não há outro tier.
   E-MAIL ............ jitshousepraiadorosa@gmail.com
   INSTAGRAM ......... @jitshouselifestyle · @rodrigoklippelbjj
                       · @jitshousepraiadorosa
@@ -39,8 +45,12 @@
 
   ── PENDENTE (marcado [SUBSTITUIR] no corpo) ──────────────────────
   · PROGRAMAÇÃO dos 3 dias  → seção 05, bloco <!== TIMELINE ==>
-  · PREÇO / LOTES / INCLUSO → seção 09  (+ "offers" no JSON-LD)
-  · LINK DIRETO DO PRODUTO na loja InfinitePay (hoje aponta p/ a loja)
+  · O QUE O INGRESSO INCLUI → seção 09. A loja não detalha e R$ 490 está
+    bem abaixo das outras imersões (Caraíva R$ 1.790), o que sugere que
+    NÃO inclui hospedagem. Enquanto não confirmar, a página não afirma.
+  · DATA DE VIRADA DO LOTE  → seção 09, tag do preço
+  · PARCELAS ativas no checkout → seção 09, linha de pagamento
+  · CONFIRMAÇÃO da vaga é automática após o pagamento? → seção 09
   · BIO / GRADUAÇÃO do Rodrigo → seção 07
   · LINKS das landings das próximas imersões → seção 10
   · Fotos dos convidados em alta (as atuais vêm do card, 316px)
@@ -419,6 +429,42 @@ blockquote::after{content:"\201D"; color:var(--ouro-quente)}
   font-size:clamp(1.6rem,4vw,2.4rem); line-height:1.05; color:var(--verde-rosa);
   margin:0 0 .6rem;
 }
+/* bloco de preço */
+.preco{display:flex; flex-wrap:wrap; align-items:baseline; gap:.4rem .9rem; margin:0 0 .5rem}
+.preco__agora{
+  font-family:"Playfair Display",serif; font-weight:900; line-height:.9;
+  font-size:clamp(3rem,9vw,5rem); color:var(--verde-rosa); letter-spacing:-.01em;
+}
+.preco__agora small{font-size:.42em; letter-spacing:.02em; margin-right:.12em}
+.preco__de{
+  font-family:Oswald,sans-serif; font-weight:300; font-size:clamp(1rem,2.2vw,1.3rem);
+  color:var(--mute-papel); text-decoration:line-through; text-decoration-thickness:1px;
+}
+.preco__tag{
+  font-family:Oswald,sans-serif; font-weight:500; text-transform:uppercase;
+  letter-spacing:.12em; font-size:var(--fs-micro); line-height:1;
+  background:var(--verde-rosa); color:var(--papel); padding:.5rem .7rem;
+  align-self:center;
+}
+.pagamento{
+  margin:1.1rem 0 0; font-size:.92rem; color:var(--mute-papel);
+  display:flex; align-items:baseline; gap:.5rem;
+}
+.pagamento::before{
+  content:""; flex:none; width:0;height:0; border-inline:4px solid transparent;
+  border-bottom:7px solid var(--verde-rosa); transform:translateY(-1px);
+}
+/* WhatsApp rebaixado: link de texto, não botão */
+.secundario{
+  display:inline-flex; align-items:center; gap:.5rem; margin-top:1.4rem;
+  font-family:Oswald,sans-serif; font-weight:300; text-transform:uppercase;
+  letter-spacing:.13em; font-size:clamp(.72rem,1.1vw,.8rem); color:var(--verde-rosa);
+  text-decoration:none; border-bottom:1px solid rgba(0,64,48,.4);
+  padding:1rem 0 .55rem;    /* alvo de toque ≥44px sem virar botão */
+  transition:border-color .3s var(--ease), gap .3s var(--ease);
+}
+.secundario:hover{border-color:var(--verde-rosa); gap:.75rem}
+
 .lista{list-style:none; margin:1.5rem 0 0; padding:0; display:grid; gap:.85rem}
 .lista li{display:grid; grid-template-columns:auto 1fr; gap:.85rem; align-items:baseline;
   font-size:.97rem; color:var(--mute-papel)}
@@ -512,7 +558,7 @@ footer{border-top:1px solid rgba(197,177,120,.22); padding-block:clamp(2.5rem,6v
     <span>Jitshouse Lifestyle</span>
   </a>
   <!-- [DADO: link de conversão] -->
-  <a class="btn" href="https://wa.me/555199041589?text=Ol%C3%A1%21%20Quero%20garantir%20minha%20vaga%20no%20Anivers%C3%A1rio%20Jitshouse%20%2804%20a%2006%20de%20setembro%2C%20Praia%20do%20Rosa%29.%20Como%20fa%C3%A7o%3F" target="_blank" rel="noopener">Garantir minha vaga</a>
+  <a class="btn" href="https://loja.infinitepay.io/jitshouse_lifestyle/yne5701-ticket-silver-aniversario-jitshouse">Garantir minha vaga</a>
 </header>
 
 <!-- ══ 02 · HERO ═════════════════════════════════════════════════ -->
@@ -531,7 +577,7 @@ footer{border-top:1px solid rgba(197,177,120,.22); padding-block:clamp(2.5rem,6v
         <p class="hero__tag an" data-d="2">Viva o Jiu Jitsu. Viva o Lifestyle.</p>
         <p class="hero__sub an" data-d="3">Três dias celebrando a casa que provou que o jiu-jitsu vai além do tatame — com Rodrigo Klippel e seis convidados confirmados.</p>
         <div class="hero__cta an" data-d="4">
-          <a class="btn btn--g" href="https://wa.me/555199041589?text=Ol%C3%A1%21%20Quero%20garantir%20minha%20vaga%20no%20Anivers%C3%A1rio%20Jitshouse%20%2804%20a%2006%20de%20setembro%2C%20Praia%20do%20Rosa%29.%20Como%20fa%C3%A7o%3F" target="_blank" rel="noopener">Garantir minha vaga</a>
+          <a class="btn btn--g" href="https://loja.infinitepay.io/jitshouse_lifestyle/yne5701-ticket-silver-aniversario-jitshouse">Garantir minha vaga</a>
           <a class="btn btn--g btn--fantasma" href="#convidados">Ver os convidados</a>
         </div>
       </div>
@@ -733,21 +779,42 @@ footer{border-top:1px solid rgba(197,177,120,.22); padding-block:clamp(2.5rem,6v
       <div class="invest__grid">
         <div>
           <p class="rotulo olho"><span>05 — Investimento</span></p>
-          <!-- [SUBSTITUIR] valor, lotes, formas de pagamento e o que está
-               incluso (hospedagem? refeições? traslado?). Quando chegar,
-               trocar o bloco abaixo e acrescentar "offers" no JSON-LD. -->
-          <p class="valor">Vagas limitadas</p>
-          <p style="color:var(--mute-papel); margin:0">A casa comporta um número fechado de pessoas — por isso a vaga é confirmada uma a uma, direto no WhatsApp.</p>
-          <ul class="lista">
-            <li><span><strong>Valor e condições de pagamento</strong> — enviados na hora, pelo WhatsApp oficial.</span></li>
-            <li><span><strong>O que está incluso</strong> — hospedagem, refeições e atividades: a lista completa vem junto.</span></li>
-            <li><span><strong>Confirmação</strong> — a vaga só é reservada depois do pagamento.</span></li>
-          </ul>
+
+          <!-- [DADO: preço] confere com a loja oficial em 24/08/2026:
+               R$ 490,00 · de R$ 590,00 · -17%. NUNCA divergir do checkout.
+               [VALIDAR] o desconto tem data de virada de lote? Se tiver,
+               trocar a tag por "-17% · ATÉ DD/MM" — urgência real converte.
+               Hoje a loja não divulga prazo nenhum, então só o riscado. -->
+          <p class="preco">
+            <span class="preco__agora"><small>R$</small>490</span>
+            <span class="preco__de">R$ 590</span>
+            <span class="preco__tag">-17% · preço atual</span>
+          </p>
+          <p style="color:var(--mute-papel); margin:0">Ingresso do Aniversário Jitshouse, vendido na loja oficial da Jitshouse Lifestyle.</p>
+
+          <!-- [VALIDAR] parcelas ativas no checkout: a loja só revela as
+               formas de pagamento na tela final, então não afirmo bandeiras
+               nem número de parcelas aqui. Se o Rodrigo confirmar, virar
+               "Pix ou cartão em até Nx". -->
+          <p class="pagamento">Pagamento seguro pela InfinitePay, em nome de Rodrigo de Mello Klippel.</p>
+
           <div class="acoes">
-            <a class="btn" href="https://wa.me/555199041589?text=Ol%C3%A1%21%20Quero%20garantir%20minha%20vaga%20no%20Anivers%C3%A1rio%20Jitshouse%20%2804%20a%2006%20de%20setembro%2C%20Praia%20do%20Rosa%29.%20Como%20fa%C3%A7o%3F" target="_blank" rel="noopener">Falar no WhatsApp</a>
-            <!-- [SUBSTITUIR] trocar pelo link direto do produto quando existir -->
-            <a class="btn btn--fantasma" href="https://loja.infinitepay.io/jitshouse_lifestyle" target="_blank" rel="noopener">Loja oficial</a>
+            <a class="btn btn--g" href="https://loja.infinitepay.io/jitshouse_lifestyle/yne5701-ticket-silver-aniversario-jitshouse">Comprar minha vaga</a>
           </div>
+
+          <!-- [VALIDAR] a vaga confirma automático após o pagamento ou o
+               Rodrigo confirma na mão? Se for na mão, trocar por
+               "confirmação em até X horas". -->
+          <ul class="lista">
+            <li><span><strong>Compra direta</strong> — você fecha na loja oficial, sem precisar falar com ninguém antes.</span></li>
+            <li><span><strong>Um único ingresso</strong> — não há outra categoria à venda para o Aniversário.</span></li>
+            <li><span><strong>Vagas limitadas</strong> — a casa comporta um número fechado de pessoas.</span></li>
+          </ul>
+
+          <!-- WhatsApp agora é canal de dúvidas, não de compra -->
+          <a class="secundario" href="https://wa.me/555199041589?text=Ol%C3%A1%21%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Anivers%C3%A1rio%20Jitshouse%20%2804%20a%2006%20de%20setembro%2C%20Praia%20do%20Rosa%29%20antes%20de%20fechar." target="_blank" rel="noopener">
+            Dúvidas antes de fechar? Fala com a gente <span aria-hidden="true">→</span>
+          </a>
         </div>
 
         <dl class="logistica">
@@ -756,8 +823,13 @@ footer{border-top:1px solid rgba(197,177,120,.22); padding-block:clamp(2.5rem,6v
             <dd>A Praia do Rosa fica em Imbituba, sul de Santa Catarina — cerca de 1h30 de carro do aeroporto de Florianópolis (FLN).</dd>
           </div>
           <div>
-            <dt>Hospedagem</dt>
-            <dd>Na própria casa da Jitshouse, na Praia do Rosa: você treina, come e dorme no mesmo lugar.</dd>
+            <dt>A casa</dt>
+            <!-- [SUBSTITUIR] o ingresso de R$ 490 inclui hospedagem e
+                 refeições? A loja não diz, e o valor é bem abaixo das outras
+                 imersões (Caraíva R$ 1.790), o que sugere que não. Enquanto
+                 não confirmar com o Rodrigo, esta página NÃO afirma que
+                 inclui — texto neutro abaixo. -->
+            <dd>A Jitshouse fica na Praia do Rosa: é lá que acontecem os treinos e o open mat dos três dias.</dd>
           </div>
           <div>
             <dt>Nível</dt>
@@ -805,8 +877,12 @@ footer{border-top:1px solid rgba(197,177,120,.22); padding-block:clamp(2.5rem,6v
   <div class="wrap">
     <img class="final__brasao an" src="img/brasao.webp" alt="Brasão Jitshouse Lifestyle" width="130" height="130" loading="lazy">
     <h2 class="display an" data-d="1" style="font-size:var(--fs-h2)">O tatame é só o começo. <em>Venha viver mais.</em></h2>
-    <p class="an" data-d="2"><a class="btn btn--g" href="https://wa.me/555199041589?text=Ol%C3%A1%21%20Quero%20garantir%20minha%20vaga%20no%20Anivers%C3%A1rio%20Jitshouse%20%2804%20a%2006%20de%20setembro%2C%20Praia%20do%20Rosa%29.%20Como%20fa%C3%A7o%3F" target="_blank" rel="noopener">Quero minha vaga</a></p>
-    <p class="obs an" data-d="3">04, 05 e 06 de setembro · Praia do Rosa — SC</p>
+    <p class="an" data-d="2"><a class="btn btn--g" href="https://loja.infinitepay.io/jitshouse_lifestyle/yne5701-ticket-silver-aniversario-jitshouse">Quero minha vaga</a></p>
+    <p class="obs an" data-d="3">R$ 490 · 04, 05 e 06 de setembro · Praia do Rosa — SC<br>
+      <span style="opacity:.75">Compra direta · processada pela InfinitePay</span></p>
+    <p class="an" data-d="3" style="margin-top:1.5rem">
+      <a class="secundario" style="color:var(--ouro); border-color:rgba(197,177,120,.4)" href="https://wa.me/555199041589?text=Ol%C3%A1%21%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Anivers%C3%A1rio%20Jitshouse%20%2804%20a%2006%20de%20setembro%2C%20Praia%20do%20Rosa%29%20antes%20de%20fechar." target="_blank" rel="noopener">Dúvidas? Fala no WhatsApp <span aria-hidden="true">→</span></a>
+    </p>
   </div>
 </section>
 
@@ -819,6 +895,7 @@ footer{border-top:1px solid rgba(197,177,120,.22); padding-block:clamp(2.5rem,6v
       <a href="https://instagram.com/rodrigoklippelbjj" target="_blank" rel="noopener">@rodrigoklippelbjj</a>
       <a href="https://instagram.com/jitshousepraiadorosa" target="_blank" rel="noopener">@jitshousepraiadorosa</a>
       <a href="https://jitshouse.com" target="_blank" rel="noopener">jitshouse.com</a>
+      <a href="https://wa.me/555199041589?text=Ol%C3%A1%21%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Anivers%C3%A1rio%20Jitshouse%20%2804%20a%2006%20de%20setembro%2C%20Praia%20do%20Rosa%29%20antes%20de%20fechar." target="_blank" rel="noopener">WhatsApp — dúvidas</a>
       <a href="mailto:jitshousepraiadorosa@gmail.com">jitshousepraiadorosa@gmail.com</a>
     </nav>
     <!-- [VALIDAR] crédito com o Baruc antes de publicar -->
@@ -828,7 +905,7 @@ footer{border-top:1px solid rgba(197,177,120,.22); padding-block:clamp(2.5rem,6v
 
 <!-- ══ BARRA FIXA MOBILE ═════════════════════════════════════════ -->
 <div class="barra" id="barra">
-  <a class="btn" href="https://wa.me/555199041589?text=Ol%C3%A1%21%20Quero%20garantir%20minha%20vaga%20no%20Anivers%C3%A1rio%20Jitshouse%20%2804%20a%2006%20de%20setembro%2C%20Praia%20do%20Rosa%29.%20Como%20fa%C3%A7o%3F" target="_blank" rel="noopener">Garantir minha vaga — 04 a 06 set</a>
+  <a class="btn" href="https://loja.infinitepay.io/jitshouse_lifestyle/yne5701-ticket-silver-aniversario-jitshouse">Garantir minha vaga — R$ 490</a>
 </div>
 
 <script type="application/ld+json">
@@ -844,6 +921,15 @@ footer{border-top:1px solid rgba(197,177,120,.22); padding-block:clamp(2.5rem,6v
   "url":"https://jitshouse-aniversario.vercel.app/",
   "image":["https://jitshouse-aniversario.vercel.app/img/og.jpg"],
   "inLanguage":"pt-BR",
+  "offers":{
+    "@type":"Offer",
+    "name":"Ingresso — Aniversário Jitshouse",
+    "price":"490.00",
+    "priceCurrency":"BRL",
+    "availability":"https://schema.org/InStock",
+    "url":"https://loja.infinitepay.io/jitshouse_lifestyle/yne5701-ticket-silver-aniversario-jitshouse",
+    "seller":{"@type":"Organization","name":"Jitshouse Lifestyle"}
+  },
   "location":{
     "@type":"Place",
     "name":"Jitshouse — Praia do Rosa",
