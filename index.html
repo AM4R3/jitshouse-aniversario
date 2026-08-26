@@ -445,12 +445,13 @@ blockquote::after{content:"\201D"; color:var(--ouro-quente)}
 /* ── 08 · O LUGAR ────────────────────────────────────────────────── */
 .lugar{position:relative}
 .lugar__foto{width:100%; height:clamp(300px,58vh,620px); object-fit:cover}
-/* a foto da onda é muito clara: véu de base + scrim do texto */
-.lugar::before{content:""; position:absolute; inset:0; background:rgba(1,16,15,.52); pointer-events:none}
+/* o pôr do sol é quente: escurece por brilho, não com véu verde —
+   sobrepor o teal deixava o dourado com cara de suja */
+.lugar__foto{filter:brightness(.52)}
 .lugar__texto{
   position:absolute; inset:auto 0 0;
   padding-block:clamp(4rem,11vw,7rem) clamp(2rem,6vw,4rem);
-  background:linear-gradient(0deg, rgba(1,16,15,.92) 0%, rgba(1,16,15,.70) 50%, rgba(1,16,15,.28) 85%, transparent 100%);
+  background:linear-gradient(0deg, rgba(1,16,15,.94) 0%, rgba(1,16,15,.74) 50%, rgba(1,16,15,.32) 85%, transparent 100%);
 }
 .lugar h2{color:var(--papel); max-width:20ch}
 .lugar p{color:var(--mute-esc); max-width:48ch; margin:1rem 0 0}
@@ -770,31 +771,31 @@ footer{border-top:1px solid rgba(197,177,120,.22); padding-block:clamp(2.5rem,6v
          [VALIDAR] equipe/função do João Fábio: nenhum card informa. -->
     <div class="convidados">
       <figure class="conv an" style="--i:0">
-        <img src="img/convidado-carlos.webp" alt="Retrato do professor Carlos André" width="420" height="420" loading="lazy" decoding="async">
+        <img src="img/convidado-carlos.webp" alt="Retrato do professor Carlos André" width="460" height="460" loading="lazy" decoding="async">
         <figcaption><b>Carlos André</b><span>CT Black Top Team</span></figcaption>
       </figure>
       <figure class="conv an" style="--i:1">
-        <img src="img/convidado-matheus.webp" alt="Retrato do professor Matheus Viana" width="420" height="420" loading="lazy" decoding="async">
+        <img src="img/convidado-matheus.webp" alt="Retrato do professor Matheus Viana" width="460" height="460" loading="lazy" decoding="async">
         <figcaption><b>Matheus Viana</b><span>Professor confederado CBJJ e IBJJF</span></figcaption>
       </figure>
       <figure class="conv an" style="--i:2">
-        <img src="img/convidado-pedro.webp" alt="Retrato de Pedro Wiggers" width="420" height="420" loading="lazy" decoding="async">
+        <img src="img/convidado-pedro.webp" alt="Retrato de Pedro Wiggers" width="460" height="460" loading="lazy" decoding="async">
         <figcaption><b>Pedro Wiggers</b><span>CEO e professor da Wiggers Academy</span></figcaption>
       </figure>
       <figure class="conv an" style="--i:3">
-        <img src="img/convidado-joaofabio.webp" alt="Retrato de João Fábio Paiva Cabral" width="420" height="420" loading="lazy" decoding="async">
+        <img src="img/convidado-joaofabio.webp" alt="Retrato de João Fábio Paiva Cabral" width="460" height="460" loading="lazy" decoding="async">
         <figcaption><b>João Fábio Paiva Cabral</b><span>Convidado confirmado</span></figcaption>
       </figure>
       <figure class="conv an" style="--i:4">
-        <img src="img/convidado-julyano.webp" alt="Retrato do professor Julyano Machado" width="420" height="420" loading="lazy" decoding="async">
+        <img src="img/convidado-julyano.webp" alt="Retrato do professor Julyano Machado" width="460" height="460" loading="lazy" decoding="async">
         <figcaption><b>Julyano Machado</b><span>Professor BJJ · Essence Jiu Jitsu</span></figcaption>
       </figure>
       <figure class="conv an" style="--i:5">
-        <img src="img/convidado-henrique.webp" alt="Retrato de Henrique Bitelo" width="420" height="420" loading="lazy" decoding="async">
+        <img src="img/convidado-henrique.webp" alt="Retrato de Henrique Bitelo" width="460" height="460" loading="lazy" decoding="async">
         <figcaption><b>Henrique Bitelo</b><span>Academia Ferreira Behring · EUA</span></figcaption>
       </figure>
       <figure class="conv an" style="--i:6">
-        <img src="img/convidado-keiny.webp" alt="Retrato do professor Keiny Rilho" width="420" height="420" loading="lazy" decoding="async">
+        <img src="img/convidado-keiny.webp" alt="Retrato do professor Keiny Rilho" width="460" height="460" loading="lazy" decoding="async">
         <figcaption><b>Keiny Rilho</b><span><a href="https://instagram.com/keinyrilho" target="_blank" rel="noopener">@keinyrilho</a> · Professor Jiu Jitsu</span></figcaption>
       </figure>
     </div>
@@ -826,7 +827,7 @@ footer{border-top:1px solid rgba(197,177,120,.22); padding-block:clamp(2.5rem,6v
 
 <!-- ══ 08 · O LUGAR ══════════════════════════════════════════════ -->
 <section class="lugar">
-  <img class="lugar__foto" src="img/lugar-onda.webp" alt="Surfista dropando uma onda grande na Praia do Rosa" width="1300" height="1138" loading="lazy" decoding="async">
+  <img class="lugar__foto" src="img/lugar-porsol.webp" alt="Pôr do sol sobre o mar na Praia do Rosa, com a restinga em silhueta e uma pessoa sozinha na areia" width="1800" height="1575" loading="lazy" decoding="async">
   <div class="lugar__texto">
     <div class="wrap">
       <h2 class="display an" style="font-size:var(--fs-h2)">A casa fica na Praia do Rosa</h2>
@@ -845,7 +846,7 @@ footer{border-top:1px solid rgba(197,177,120,.22); padding-block:clamp(2.5rem,6v
       <figure class="an"><img src="img/exp-piscina.webp" alt="Piscina da casa entre a mata, com pessoas na borda" width="760" height="665" loading="lazy" decoding="async"><figcaption>Descanso entre treinos</figcaption></figure>
       <figure class="an" data-d="1"><img src="img/exp-quarto.webp" alt="Quarto da hospedagem com cama de casal, teto de madeira e varanda para o verde" width="760" height="665" loading="lazy" decoding="async"><figcaption>Onde você dorme</figcaption></figure>
       <figure class="an" data-d="2"><img src="img/exp-casa.webp" alt="A casa vista do alto: piscina comprida, deck de madeira e palmeiras" width="760" height="665" loading="lazy" decoding="async"><figcaption>A casa do alto</figcaption></figure>
-      <figure class="an" data-d="3"><img src="img/exp-porsol.webp" alt="Pôr do sol sobre o mar, visto da vegetação de restinga" width="760" height="665" loading="lazy" decoding="async"><figcaption>O fim de tarde</figcaption></figure>
+      <figure class="an" data-d="3"><img src="img/exp-onda.webp" alt="Surfista dropando uma onda grande na Praia do Rosa" width="760" height="665" loading="lazy" decoding="async"><figcaption>O mar de surf</figcaption></figure>
     </div>
     <p class="divisor" style="margin-top:clamp(2.5rem,6vw,4rem)"><i></i></p>
   </div>
