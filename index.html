@@ -20,10 +20,10 @@
   ANFITRIÃO ......... Rodrigo Klippel — fundador da Jitshouse
   CONVIDADOS ........ 7 confirmados (card de 25/08/2026):
                       Carlos André      · CT Black Top Team
-                      Matheus Viana     · Professor CBJJ e BJJF
-                      Pedro Wiggers     · CEO Wiggers Academia
+                      Matheus Viana     · Professor confederado CBJJ e IBJJF
+                      Pedro Wiggers     · CEO e professor da Wiggers Academy
                       João Fábio Paiva Cabral · [VALIDAR] equipe/função
-                      Julyano Machado   · Professor BJJ
+                      Julyano Machado   · Professor BJJ · Essence Jiu Jitsu
                       Henrique Bitelo   · Academia Ferreira Behring (EUA)
                       Keiny Rilho       · Professor Jiu Jitsu (@keinyrilho)
   PILARES ........... Jiu jitsu de alto nível · Local incrível ·
@@ -229,19 +229,19 @@ a{color:inherit}
 }
 .hero__foto{
   position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
-  object-position:center 42%; opacity:.7; z-index:0;
+  object-position:center 28%; opacity:.7; z-index:0;
 }
 .hero::after{ /* véu — mobile: o texto ocupa quase toda a altura, então escurece parelho */
   content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
   background:
-    linear-gradient(180deg, rgba(1,16,15,.66) 0%, rgba(1,16,15,.60) 42%, rgba(1,16,15,.90) 100%),
+    linear-gradient(180deg, rgba(1,16,15,.72) 0%, rgba(1,16,15,.66) 42%, rgba(1,16,15,.92) 100%),
     radial-gradient(120% 55% at 8% 26%, rgba(1,16,15,.45), transparent 100%);
 }
 @media (min-width:900px){
   /* desktop: o texto é ancorado embaixo — deixa a enseada respirar em cima */
   .hero::after{
     background:
-      linear-gradient(180deg, rgba(1,16,15,.30) 0%, rgba(1,16,15,.26) 28%, rgba(1,16,15,.80) 64%, rgba(1,16,15,.96) 100%),
+      linear-gradient(180deg, rgba(1,16,15,.30) 0%, rgba(1,16,15,.26) 28%, rgba(1,16,15,.84) 60%, rgba(1,16,15,.96) 100%),
       radial-gradient(95% 65% at 12% 92%, rgba(1,16,15,.72), transparent 62%);
   }
 }
@@ -611,7 +611,7 @@ footer{border-top:1px solid rgba(197,177,120,.22); padding-block:clamp(2.5rem,6v
 
 <!-- ══ 02 · HERO ═════════════════════════════════════════════════ -->
 <section class="hero" id="topo">
-  <img class="hero__foto" src="img/hero-rosa.webp" alt="A enseada da Praia do Rosa vista do alto: mar azul-turquesa, arrebentação e os morros verdes que fecham a baía" width="1500" height="1312" fetchpriority="high">
+  <img class="hero__foto" src="img/hero-rosa.webp" alt="A enseada da Praia do Rosa vista do alto: mar azul-turquesa, arrebentação e os morros verdes que fecham a baía" width="1900" height="1663" fetchpriority="high">
   <div class="wrap">
     <div class="hero__grid">
       <div>
@@ -775,11 +775,11 @@ footer{border-top:1px solid rgba(197,177,120,.22); padding-block:clamp(2.5rem,6v
       </figure>
       <figure class="conv an" style="--i:1">
         <img src="img/convidado-matheus.webp" alt="Retrato do professor Matheus Viana" width="420" height="420" loading="lazy" decoding="async">
-        <figcaption><b>Matheus Viana</b><span>Professor CBJJ e BJJF</span></figcaption>
+        <figcaption><b>Matheus Viana</b><span>Professor confederado CBJJ e IBJJF</span></figcaption>
       </figure>
       <figure class="conv an" style="--i:2">
         <img src="img/convidado-pedro.webp" alt="Retrato de Pedro Wiggers" width="420" height="420" loading="lazy" decoding="async">
-        <figcaption><b>Pedro Wiggers</b><span>CEO Wiggers Academia</span></figcaption>
+        <figcaption><b>Pedro Wiggers</b><span>CEO e professor da Wiggers Academy</span></figcaption>
       </figure>
       <figure class="conv an" style="--i:3">
         <img src="img/convidado-joaofabio.webp" alt="Retrato de João Fábio Paiva Cabral" width="420" height="420" loading="lazy" decoding="async">
@@ -787,7 +787,7 @@ footer{border-top:1px solid rgba(197,177,120,.22); padding-block:clamp(2.5rem,6v
       </figure>
       <figure class="conv an" style="--i:4">
         <img src="img/convidado-julyano.webp" alt="Retrato do professor Julyano Machado" width="420" height="420" loading="lazy" decoding="async">
-        <figcaption><b>Julyano Machado</b><span>Professor BJJ</span></figcaption>
+        <figcaption><b>Julyano Machado</b><span>Professor BJJ · Essence Jiu Jitsu</span></figcaption>
       </figure>
       <figure class="conv an" style="--i:5">
         <img src="img/convidado-henrique.webp" alt="Retrato de Henrique Bitelo" width="420" height="420" loading="lazy" decoding="async">
