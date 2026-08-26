@@ -18,13 +18,14 @@
   DATA ISO .......... 2026-09-04  →  2026-09-06
   LOCAL ............. Praia do Rosa · Imbituba — Santa Catarina
   ANFITRIÃO ......... Rodrigo Klippel — fundador da Jitshouse
-  CONVIDADOS ........ 6 confirmados (card oficial):
-                      Carlos André     · CT Black Top Team
-                      Matheus Viana    · Professor CBJJ e BJJF
-                      Pedro Wiggers    · CEO Wiggers Academia
-                      Julyano Machado  · Professor BJJ
-                      Henrique Bitelo  · Academia Ferreira Behring (EUA)
-                      Keiny Rilho      · Professor Jiu Jitsu (@keinyrilho)
+  CONVIDADOS ........ 7 confirmados (card de 25/08/2026):
+                      Carlos André      · CT Black Top Team
+                      Matheus Viana     · Professor CBJJ e BJJF
+                      Pedro Wiggers     · CEO Wiggers Academia
+                      João Fábio Paiva Cabral · [VALIDAR] equipe/função
+                      Julyano Machado   · Professor BJJ
+                      Henrique Bitelo   · Academia Ferreira Behring (EUA)
+                      Keiny Rilho       · Professor Jiu Jitsu (@keinyrilho)
   PILARES ........... Jiu jitsu de alto nível · Local incrível ·
                       Energia positiva · Amigos e irmãos de tatame
                       (copy real do card de convidados)
@@ -66,7 +67,7 @@
 -->
 
 <title>Aniversário Jitshouse — Imersão de Jiu-Jitsu na Praia do Rosa · 04 a 06 de setembro</title>
-<meta name="description" content="Três dias de muito jiu-jitsu na Praia do Rosa, Santa Catarina. A imersão que celebra o aniversário da Jitshouse, com Rodrigo Klippel e seis convidados confirmados. 04, 05 e 06 de setembro de 2026. Vagas limitadas.">
+<meta name="description" content="Três dias de muito jiu-jitsu na Praia do Rosa, Santa Catarina. A imersão que celebra o aniversário da Jitshouse, com Rodrigo Klippel e sete convidados confirmados. 04, 05 e 06 de setembro de 2026. Vagas limitadas.">
 <link rel="canonical" href="https://jitshouse-aniversario.vercel.app/">
 <meta name="theme-color" content="#04211E">
 
@@ -74,7 +75,7 @@
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Jitshouse Lifestyle">
 <meta property="og:title" content="Aniversário Jitshouse — 04 a 06 de setembro · Praia do Rosa, SC">
-<meta property="og:description" content="3 dias de muito jiu-jitsu na casa-mãe da Jitshouse. Com Rodrigo Klippel e seis convidados confirmados. Vagas limitadas.">
+<meta property="og:description" content="3 dias de muito jiu-jitsu na casa-mãe da Jitshouse. Com Rodrigo Klippel e sete convidados confirmados. Vagas limitadas.">
 <meta property="og:url" content="https://jitshouse-aniversario.vercel.app/">
 <meta property="og:image" content="https://jitshouse-aniversario.vercel.app/img/og.jpg">
 <meta property="og:image:alt" content="Card oficial do Aniversário Jitshouse — Praia do Rosa, 04, 05 e 06 de setembro">
@@ -394,7 +395,12 @@ blockquote::after{content:"\201D"; color:var(--ouro-quente)}
   grid-template-columns:repeat(2,minmax(0,1fr)); margin-top:clamp(2rem,5vw,3rem)}
 @media (min-width:760px){ .convidados{grid-template-columns:repeat(3,minmax(0,1fr))} }
 .conv{margin:0; display:grid; gap:.9rem; justify-items:center; text-align:center}
-.conv img{width:100%; max-width:190px; height:auto; aspect-ratio:1}
+.conv img{
+  width:100%; max-width:190px; height:auto; aspect-ratio:1; border-radius:50%;
+  /* o aro dourado agora é CSS: no card oficial ele é fino demais e não
+     sobrevive ao recorte igual nos sete. Assim fica idêntico em todos. */
+  box-shadow:0 0 0 2px var(--ouro-quente);
+}
 .conv b{display:block; font-family:Oswald,sans-serif; font-weight:500; text-transform:uppercase;
   letter-spacing:.06em; font-size:clamp(.9rem,1.7vw,1.1rem); color:var(--verde-rosa); line-height:1.2}
 .conv span{font-family:Oswald,sans-serif; font-weight:300; text-transform:uppercase;
@@ -409,6 +415,14 @@ blockquote::after{content:"\201D"; color:var(--ouro-quente)}
   .conv:nth-child(4) img{max-width:158px}
   .conv:nth-child(5){margin-top:-10px}
   .conv:nth-child(6) img{max-width:172px}
+  .conv:nth-child(7){margin-top:14px}
+  .conv:nth-child(7) img{max-width:162px}
+  /* são sete: o último sobra na fileira. Centraliza em vez de deixar
+     órfão na esquerda. */
+  .conv:nth-child(7){grid-column:2}
+}
+@media (max-width:759px){
+  .conv:nth-child(7){grid-column:1 / -1; max-width:52%; margin-inline:auto}
 }
 
 /* ── 07 · ANFITRIÃO ──────────────────────────────────────────────── */
@@ -609,7 +623,7 @@ footer{border-top:1px solid rgba(197,177,120,.22); padding-block:clamp(2.5rem,6v
           <span class="l2">Jitshouse</span>
         </h1>
         <p class="hero__tag an" data-d="2">Viva o Jiu Jitsu. Viva o Lifestyle.</p>
-        <p class="hero__sub an" data-d="3">Três dias celebrando a casa que provou que o jiu-jitsu vai além do tatame — com Rodrigo Klippel e seis convidados confirmados.</p>
+        <p class="hero__sub an" data-d="3">Três dias celebrando a casa que provou que o jiu-jitsu vai além do tatame — com Rodrigo Klippel e sete convidados confirmados.</p>
         <div class="hero__cta an" data-d="4">
           <a class="btn btn--g" href="https://loja.infinitepay.io/jitshouse_lifestyle/yne5701-ticket-silver-aniversario-jitshouse">Garantir minha vaga</a>
           <a class="btn btn--g btn--fantasma" href="#convidados">Ver os convidados</a>
@@ -635,7 +649,7 @@ footer{border-top:1px solid rgba(197,177,120,.22); padding-block:clamp(2.5rem,6v
         <div class="ficha__item">
           <dt>Com</dt>
           <!-- [DADO: anfitrião] -->
-          <dd>Rodrigo Klippel<small>+ 6 convidados</small></dd>
+          <dd>Rodrigo Klippel<small>+ 7 convidados</small></dd>
         </div>
       </dl>
     </div>
@@ -745,30 +759,42 @@ footer{border-top:1px solid rgba(197,177,120,.22); padding-block:clamp(2.5rem,6v
     <p class="rotulo olho an"><span>03 — Convidados confirmados</span></p>
     <h2 class="display an" data-d="1" style="font-size:var(--fs-h2); color:var(--verde-rosa); max-width:16ch">Quem sobe no tatame com a gente</h2>
 
-    <!-- [DADO: convidados — os 6 do card oficial] -->
+    <!-- [DADO: convidados] Do card oficial mais recente,
+         Aniversario-Jitshouse-ST-Site.jpg, publicado em 25/08/2026.
+         São SETE, não seis: entrou João Fábio Paiva Cabral, que não
+         estava na versão de 13/08 usada até agora.
+
+         Os retratos são recortes desse card em 420px — o card anterior
+         dava só 158px. O card novo largou os subtítulos de equipe; os
+         que aparecem aqui vêm da versão de 13/08 e seguem válidos.
+         [VALIDAR] equipe/função do João Fábio: nenhum card informa. -->
     <div class="convidados">
       <figure class="conv an" style="--i:0">
-        <img src="img/convidado-carlos.webp" alt="Retrato do professor Carlos André" width="316" height="316" loading="lazy" decoding="async">
+        <img src="img/convidado-carlos.webp" alt="Retrato do professor Carlos André" width="420" height="420" loading="lazy" decoding="async">
         <figcaption><b>Carlos André</b><span>CT Black Top Team</span></figcaption>
       </figure>
       <figure class="conv an" style="--i:1">
-        <img src="img/convidado-matheus.webp" alt="Retrato do professor Matheus Viana" width="316" height="316" loading="lazy" decoding="async">
+        <img src="img/convidado-matheus.webp" alt="Retrato do professor Matheus Viana" width="420" height="420" loading="lazy" decoding="async">
         <figcaption><b>Matheus Viana</b><span>Professor CBJJ e BJJF</span></figcaption>
       </figure>
       <figure class="conv an" style="--i:2">
-        <img src="img/convidado-pedro.webp" alt="Retrato de Pedro Wiggers" width="316" height="316" loading="lazy" decoding="async">
+        <img src="img/convidado-pedro.webp" alt="Retrato de Pedro Wiggers" width="420" height="420" loading="lazy" decoding="async">
         <figcaption><b>Pedro Wiggers</b><span>CEO Wiggers Academia</span></figcaption>
       </figure>
       <figure class="conv an" style="--i:3">
-        <img src="img/convidado-julyano.webp" alt="Retrato do professor Julyano Machado" width="316" height="316" loading="lazy" decoding="async">
-        <figcaption><b>Julyano Machado</b><span>Professor BJJ</span></figcaption>
+        <img src="img/convidado-joaofabio.webp" alt="Retrato de João Fábio Paiva Cabral" width="420" height="420" loading="lazy" decoding="async">
+        <figcaption><b>João Fábio Paiva Cabral</b><span>Convidado confirmado</span></figcaption>
       </figure>
       <figure class="conv an" style="--i:4">
-        <img src="img/convidado-henrique.webp" alt="Retrato de Henrique Bitelo" width="316" height="316" loading="lazy" decoding="async">
-        <figcaption><b>Henrique Bitelo</b><span>Academia Ferreira Behring · EUA</span></figcaption>
+        <img src="img/convidado-julyano.webp" alt="Retrato do professor Julyano Machado" width="420" height="420" loading="lazy" decoding="async">
+        <figcaption><b>Julyano Machado</b><span>Professor BJJ</span></figcaption>
       </figure>
       <figure class="conv an" style="--i:5">
-        <img src="img/convidado-keiny.webp" alt="Retrato do professor Keiny Rilho" width="316" height="316" loading="lazy" decoding="async">
+        <img src="img/convidado-henrique.webp" alt="Retrato de Henrique Bitelo" width="420" height="420" loading="lazy" decoding="async">
+        <figcaption><b>Henrique Bitelo</b><span>Academia Ferreira Behring · EUA</span></figcaption>
+      </figure>
+      <figure class="conv an" style="--i:6">
+        <img src="img/convidado-keiny.webp" alt="Retrato do professor Keiny Rilho" width="420" height="420" loading="lazy" decoding="async">
         <figcaption><b>Keiny Rilho</b><span><a href="https://instagram.com/keinyrilho" target="_blank" rel="noopener">@keinyrilho</a> · Professor Jiu Jitsu</span></figcaption>
       </figure>
     </div>
@@ -989,7 +1015,7 @@ footer{border-top:1px solid rgba(197,177,120,.22); padding-block:clamp(2.5rem,6v
   "@context":"https://schema.org",
   "@type":"Event",
   "name":"Aniversário Jitshouse",
-  "description":"Imersão de três dias de jiu-jitsu na casa da Jitshouse, na Praia do Rosa (Imbituba/SC), celebrando o aniversário da casa. Com Rodrigo Klippel e seis convidados confirmados.",
+  "description":"Imersão de três dias de jiu-jitsu na casa da Jitshouse, na Praia do Rosa (Imbituba/SC), celebrando o aniversário da casa. Com Rodrigo Klippel e sete convidados confirmados.",
   "startDate":"2026-09-04",
   "endDate":"2026-09-06",
   "eventStatus":"https://schema.org/EventScheduled",
@@ -1029,6 +1055,7 @@ footer{border-top:1px solid rgba(197,177,120,.22); padding-block:clamp(2.5rem,6v
     {"@type":"Person","name":"Carlos André"},
     {"@type":"Person","name":"Matheus Viana"},
     {"@type":"Person","name":"Pedro Wiggers"},
+    {"@type":"Person","name":"João Fábio Paiva Cabral"},
     {"@type":"Person","name":"Julyano Machado"},
     {"@type":"Person","name":"Henrique Bitelo"},
     {"@type":"Person","name":"Keiny Rilho","sameAs":"https://www.instagram.com/keinyrilho/"}
