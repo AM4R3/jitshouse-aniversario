@@ -33,10 +33,21 @@
   CHECKOUT .......... https://loja.infinitepay.io/jitshouse_lifestyle/
                       yne5701-ticket-silver-aniversario-jitshouse
                       (destino de TODOS os CTAs primários, mesma aba)
-  PREÇO ............. R$ 490,00 · de R$ 590,00 · -17%
+  PREÇO ............. R$ 490,00 · de R$ 590,00 · -17%  (o checkout)
+                      ⚠ jitshouse.com anuncia R$ 540,00 para o mesmo
+                      produto. Divergência aberta — ver o comentário na
+                      seção 09. Exibimos o valor que a loja cobra.
                       Vendedor no checkout: RODRIGO DE MELLO KLIPPEL
                       Ingresso único — a loja tem 4 produtos, um por
                       imersão, e só um do Aniversário. Não há outro tier.
+  INCLUI ............ "Todas as atividades propostas na programação"
+                      (única linha de inclusos em jitshouse.com).
+                      Hospedagem NÃO é citada — nas outras imersões é.
+  PROGRAMAÇÃO ....... os 3 dias hora a hora, transcritos de
+                      jitshouse.com/aniversario-jitshouse/ em 26/08/2026:
+                      04.09 O Alicerce · 05.09 A Forja · 06.09 O Legado
+  IRMÃS ............. Caraíva R$ 1.790 · Esquenta R$ 2.190 ·
+                      Réveillon R$ 8.990 — landings no jitshouse-site
   E-MAIL ............ jitshousepraiadorosa@gmail.com
   INSTAGRAM ......... @jitshouselifestyle · @rodrigoklippelbjj
                       · @jitshousepraiadorosa
@@ -44,10 +55,8 @@
   URL DESTA PÁGINA .. https://jitshouse-aniversario.vercel.app/
 
   ── PENDENTE (marcado [SUBSTITUIR] no corpo) ──────────────────────
-  · PROGRAMAÇÃO dos 3 dias  → seção 05, bloco <!== TIMELINE ==>
-  · O QUE O INGRESSO INCLUI → seção 09. A loja não detalha e R$ 490 está
-    bem abaixo das outras imersões (Caraíva R$ 1.790), o que sugere que
-    NÃO inclui hospedagem. Enquanto não confirmar, a página não afirma.
+  · ⚠ PREÇO: 490 (loja) vs 540 (jitshouse.com) — decidir e alinhar
+  · HOSPEDAGEM está inclusa no ingresso? → seção 09
   · DATA DE VIRADA DO LOTE  → seção 09, tag do preço
   · PARCELAS ativas no checkout → seção 09, linha de pagamento
   · CONFIRMAÇÃO da vaga é automática após o pagamento? → seção 09
@@ -336,6 +345,32 @@ blockquote::after{content:"\201D"; color:var(--ouro-quente)}
   text-transform:uppercase; letter-spacing:.16em; font-size:var(--fs-micro);
   color:var(--mute-esc);
 }
+
+/* programação: três dias, hora a hora */
+.prog{list-style:none; margin:0; padding:0; display:grid; gap:clamp(2rem,4vw,2.75rem)}
+@media (min-width:900px){ .prog{grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(1.5rem,3vw,2.5rem)} }
+.prog .dia{
+  display:grid; align-content:start; gap:1.25rem;
+  padding-top:1.25rem; border-top:1px solid rgba(197,177,120,.35);
+}
+.dia__cab{display:grid; gap:.35rem}
+.dia__data{
+  margin:0; font-family:Oswald,sans-serif; font-weight:300; text-transform:uppercase;
+  letter-spacing:.2em; font-size:var(--fs-micro); color:var(--ouro);
+}
+.dia__nome{
+  margin:0; font-family:"Playfair Display",Georgia,serif; font-weight:900;
+  text-transform:uppercase; letter-spacing:.01em; line-height:.95;
+  font-size:clamp(1.6rem,3.4vw,2.1rem); color:var(--ouro-quente);
+}
+.dia__foco{margin:0; font-size:.88rem; color:var(--mute-esc)}
+.horas{list-style:none; margin:0; padding:0; display:grid; gap:.85rem}
+.horas li{display:grid; grid-template-columns:auto 1fr; gap:.9rem; align-items:baseline}
+.horas b{
+  font-family:Oswald,sans-serif; font-weight:500; letter-spacing:.06em;
+  font-size:.82rem; color:var(--areia); font-variant-numeric:tabular-nums;
+}
+.horas span{font-size:.93rem; color:var(--mute-esc); line-height:1.5}
 
 .itin{list-style:none; margin:0; padding:0; max-width:56rem}
 .itin li{
@@ -655,35 +690,53 @@ footer{border-top:1px solid rgba(197,177,120,.22); padding-block:clamp(2.5rem,6v
       <figcaption>Open mat na Jitshouse</figcaption>
     </figure>
 
-    <!--
-      ══ TIMELINE · [SUBSTITUIR] ══════════════════════════════════
-      Quando a grade real dos três dias chegar, apague a <ul class="itin">
-      abaixo e use este bloco no lugar. A cascata já está ligada em --i.
+    <!-- [DADO: programação] Transcrita de jitshouse.com/aniversario-jitshouse/
+         em 26/08/2026 — os três dias, hora a hora, como a marca publica.
+         Ao clonar para outra imersão, é este bloco que muda por inteiro. -->
+    <ol class="prog">
+      <li class="dia an" style="--i:0">
+        <div class="dia__cab">
+          <p class="dia__data">04.09 · Sexta</p>
+          <h3 class="dia__nome">O Alicerce</h3>
+          <p class="dia__foco">Foco em conexão e mobilidade</p>
+        </div>
+        <ul class="horas">
+          <li><b>17:00</b><span>Recepção e check-in · integração livre</span></li>
+          <li><b>18:30</b><span>Palestra de Mindset I: identidade e clareza do ser</span></li>
+          <li><b>19:00</b><span>Treino técnico + open mat: revisão de conceitos fundamentais</span></li>
+          <li><b>22:00</b><span>Jantar de boas-vindas e confraternização</span></li>
+        </ul>
+      </li>
+      <li class="dia an" style="--i:1">
+        <div class="dia__cab">
+          <p class="dia__data">05.09 · Sábado</p>
+          <h3 class="dia__nome">A Forja</h3>
+          <p class="dia__foco">Foco em intensidade e técnica</p>
+        </div>
+        <ul class="horas">
+          <li><b>09:00</b><span>Bloco técnico I — passagem de guarda: detalhes modernos e pressões</span></li>
+          <li><b>10:00</b><span>Bloco técnico II — guarda aberta</span></li>
+          <li><b>11:30</b><span>Open mat</span></li>
+          <li><b>12:30</b><span>Terapia de contraste: imersão no gelo + sauna</span></li>
+          <li><b>18:30</b><span>Churrasco e confraternização</span></li>
+        </ul>
+      </li>
+      <li class="dia an" style="--i:2">
+        <div class="dia__cab">
+          <p class="dia__data">06.09 · Domingo</p>
+          <h3 class="dia__nome">O Legado</h3>
+          <p class="dia__foco">Foco em estratégia e encerramento</p>
+        </div>
+        <ul class="horas">
+          <li><b>09:00</b><span>Clínica de grappling: como montar seu plano de jogo</span></li>
+          <li><b>10:30</b><span>Open mat de despedida: rola livre com música</span></li>
+          <li><b>11:30</b><span>Círculo de encerramento: feedback coletivo + palestra “Levando o jiu-jitsu para a vida fora do tatame”</span></li>
+          <li><b>13:00</b><span>Almoço de despedida</span></li>
+        </ul>
+      </li>
+    </ol>
 
-      <ol class="itin">
-        <li class="an" style="--i:0"><span class="num">Sex 04</span>
-          <div><h3>Chegada e abertura</h3><p>...</p></div></li>
-        <li class="an" style="--i:1"><span class="num">Sáb 05</span>
-          <div><h3>...</h3><p>...</p></div></li>
-        <li class="an" style="--i:2"><span class="num">Dom 06</span>
-          <div><h3>...</h3><p>...</p></div></li>
-      </ol>
-      ═════════════════════════════════════════════════════════════
-    -->
-    <ul class="itin">
-      <li class="an" style="--i:0"><span class="num">01</span>
-        <div><h3>Tatame</h3><p>Treinos e open mat com o Rodrigo e os convidados — o centro dos três dias.</p></div></li>
-      <li class="an" style="--i:1"><span class="num">02</span>
-        <div><h3>A casa</h3><p>Hospedagem, piscina, deck e mata. Você não sai da imersão para dormir.</p></div></li>
-      <li class="an" style="--i:2"><span class="num">03</span>
-        <div><h3>A mesa</h3><p>As refeições da casa — onde a turma se encontra fora do tatame.</p></div></li>
-      <li class="an" style="--i:3"><span class="num">04</span>
-        <div><h3>O Rosa</h3><p>Mar, trilha e o fim de tarde de uma das baías mais bonitas do Brasil.</p></div></li>
-      <li class="an" style="--i:4"><span class="num">05</span>
-        <div><h3>A celebração</h3><p>É aniversário da casa — o encerramento é entre os irmãos de tatame.</p></div></li>
-    </ul>
-
-    <p class="nota an">A grade completa dos três dias — horários de treino, open mat e atividades — é enviada por WhatsApp na confirmação da vaga.</p>
+    <p class="nota an">Programação sujeita a ajustes de horário conforme o clima e o ritmo da turma. Qualquer mudança é avisada no grupo da imersão.</p>
   </div>
 </section>
 
@@ -737,6 +790,7 @@ footer{border-top:1px solid rgba(197,177,120,.22); padding-block:clamp(2.5rem,6v
              de ter criado a casa no Rosa. Pedir ao Rodrigo. -->
         <p class="an" data-d="3" style="color:var(--mute-esc); margin-top:1rem">No Aniversário ele recebe pessoalmente: é a imersão que celebra a casa dele.</p>
         <div class="creditos an" data-d="3">
+          <a href="https://jitshouse-site.vercel.app/#rodrigo" target="_blank" rel="noopener">Bio completa</a>
           <a href="https://instagram.com/rodrigoklippelbjj" target="_blank" rel="noopener">@rodrigoklippelbjj</a>
           <a href="https://instagram.com/jitshouselifestyle" target="_blank" rel="noopener">@jitshouselifestyle</a>
         </div>
@@ -780,11 +834,29 @@ footer{border-top:1px solid rgba(197,177,120,.22); padding-block:clamp(2.5rem,6v
         <div>
           <p class="rotulo olho"><span>05 — Investimento</span></p>
 
-          <!-- [DADO: preço] confere com a loja oficial em 24/08/2026:
-               R$ 490,00 · de R$ 590,00 · -17%. NUNCA divergir do checkout.
+          <!-- ══ [DADO: preço] ═════════════════════════════════════════
+               ⚠ DIVERGÊNCIA ABERTA entre as duas fontes, conferida às duas
+               em 26/08/2026:
+
+                 · checkout InfinitePay (o que o cliente PAGA) .. R$ 490,00
+                   marcado como "de R$ 590,00, -17%"
+                 · jitshouse.com/aniversario-jitshouse/ anuncia .. R$ 540,00
+
+               O botão "Comprar" do site oficial aponta para ESTE MESMO
+               produto: a página de lá mostra 540 e a loja cobra 490.
+
+               Exibimos 490 porque é o valor efetivamente cobrado. Anunciar
+               540 e cobrar 490 é o único erro de preço sem conserto: o
+               cliente descobre na hora do pagamento.
+
+               PARA TROCAR PARA 540: corrija a loja PRIMEIRO, depois mude
+               os três pontos desta página — este bloco, a barra fixa do
+               mobile e o "price" do JSON-LD. Nunca só um deles.
+
                [VALIDAR] o desconto tem data de virada de lote? Se tiver,
-               trocar a tag por "-17% · ATÉ DD/MM" — urgência real converte.
-               Hoje a loja não divulga prazo nenhum, então só o riscado. -->
+               trocar a tag por "-17% · ATÉ DD/MM". Hoje a loja não
+               divulga prazo nenhum, então só o riscado.
+               ═════════════════════════════════════════════════════════ -->
           <p class="preco">
             <span class="preco__agora"><small>R$</small>490</span>
             <span class="preco__de">R$ 590</span>
@@ -805,10 +877,16 @@ footer{border-top:1px solid rgba(197,177,120,.22); padding-block:clamp(2.5rem,6v
           <!-- [VALIDAR] a vaga confirma automático após o pagamento ou o
                Rodrigo confirma na mão? Se for na mão, trocar por
                "confirmação em até X horas". -->
+          <!-- [DADO: o que inclui] jitshouse.com lista uma linha só sob o
+               preço do Ticket Silver: "Todas as atividades propostas na
+               programação." Nenhuma menção a hospedagem — e nas outras
+               imersões a hospedagem É listada (Caraíva: "Pousada Kamaiurá").
+               A omissão parece deliberada, mas não está escrita: por isso a
+               página diz o que consta e manda perguntar o resto. -->
           <ul class="lista">
-            <li><span><strong>Compra direta</strong> — você fecha na loja oficial, sem precisar falar com ninguém antes.</span></li>
-            <li><span><strong>Um único ingresso</strong> — não há outra categoria à venda para o Aniversário.</span></li>
-            <li><span><strong>Vagas limitadas</strong> — a casa comporta um número fechado de pessoas.</span></li>
+            <li><span><strong>Inclui todas as atividades da programação</strong> — os três dias inteiros, do check-in ao almoço de despedida.</span></li>
+            <li><span><strong>Hospedagem não consta na lista</strong> — se você precisa de quarto na casa, confirme no WhatsApp antes de fechar.</span></li>
+            <li><span><strong>Ingresso único</strong> — o Ticket Silver é a única categoria à venda para o Aniversário.</span></li>
           </ul>
 
           <!-- WhatsApp agora é canal de dúvidas, não de compra -->
@@ -824,11 +902,10 @@ footer{border-top:1px solid rgba(197,177,120,.22); padding-block:clamp(2.5rem,6v
           </div>
           <div>
             <dt>A casa</dt>
-            <!-- [SUBSTITUIR] o ingresso de R$ 490 inclui hospedagem e
-                 refeições? A loja não diz, e o valor é bem abaixo das outras
-                 imersões (Caraíva R$ 1.790), o que sugere que não. Enquanto
-                 não confirmar com o Rodrigo, esta página NÃO afirma que
-                 inclui — texto neutro abaixo. -->
+            <!-- [VALIDAR] hospedagem: o site oficial não a lista entre os
+                 inclusos deste ingresso, ao contrário do que faz nas outras
+                 imersões. Se o Rodrigo confirmar que a casa está inclusa,
+                 trocar a linha da lista acima e este texto. -->
             <dd>A Jitshouse fica na Praia do Rosa: é lá que acontecem os treinos e o open mat dos três dias.</dd>
           </div>
           <div>
@@ -851,21 +928,22 @@ footer{border-top:1px solid rgba(197,177,120,.22); padding-block:clamp(2.5rem,6v
     <p class="rotulo olho an"><span>06 — Próximas imersões</span></p>
     <h2 class="display an" data-d="1" style="font-size:var(--fs-h2); color:var(--areia); max-width:20ch">O calendário da casa não para em setembro</h2>
 
-    <!-- [SUBSTITUIR] href="#" → link de cada landing quando existir -->
+    <!-- [DADO: próximas imersões] as três landings existem e estão no ar,
+         no site institucional. Conferidas em 26/08/2026. -->
     <div class="proximas">
-      <a class="prox an" href="#" aria-label="Jitshouse On The Road — Caraíva, 25 a 27 de setembro. Página em breve.">
+      <a class="prox an" href="https://jitshouse-site.vercel.app/caraiva.html" target="_blank" rel="noopener" aria-label="Jitshouse On The Road — Caraíva, 25 a 27 de setembro. R$ 1.790.">
         <span class="prox__data">25–27 Set</span>
-        <span class="prox__nome">On The Road<small>Caraíva — Bahia</small></span>
+        <span class="prox__nome">On The Road<small>Caraíva — Bahia · R$ 1.790</small></span>
         <span class="prox__seta" aria-hidden="true">→</span>
       </a>
-      <a class="prox an" data-d="1" href="#" aria-label="Esquenta Costa Rica — Praia do Rosa, 10 a 12 de outubro. Página em breve.">
+      <a class="prox an" data-d="1" href="https://jitshouse-site.vercel.app/esquenta.html" target="_blank" rel="noopener" aria-label="Esquenta Costa Rica — Praia do Rosa, 10 a 12 de outubro. R$ 2.190.">
         <span class="prox__data">10–12 Out</span>
-        <span class="prox__nome">Esquenta Costa Rica<small>Praia do Rosa — SC</small></span>
+        <span class="prox__nome">Esquenta Costa Rica<small>Praia do Rosa — SC · R$ 2.190</small></span>
         <span class="prox__seta" aria-hidden="true">→</span>
       </a>
-      <a class="prox an" data-d="2" href="#" aria-label="Réveillon Costa Rica — Santa Teresa, 28 de dezembro a 2 de janeiro. Página em breve.">
+      <a class="prox an" data-d="2" href="https://jitshouse-site.vercel.app/reveillon.html" target="_blank" rel="noopener" aria-label="Réveillon Costa Rica — Santa Teresa, 28 de dezembro a 2 de janeiro. R$ 8.990.">
         <span class="prox__data">28/12–02/01</span>
-        <span class="prox__nome">Réveillon Costa Rica<small>Santa Teresa — Costa Rica</small></span>
+        <span class="prox__nome">Réveillon Costa Rica<small>Santa Teresa — Costa Rica · R$ 8.990</small></span>
         <span class="prox__seta" aria-hidden="true">→</span>
       </a>
     </div>
